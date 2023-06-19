@@ -1,0 +1,22 @@
+.text {
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    height: 35px;
+    border: 2px solid rgb(53, 52, 52);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.button {
+    border-radius: 10px;
+    width: 350px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: beige;
+}
