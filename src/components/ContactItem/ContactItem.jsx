@@ -1,11 +1,7 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactItem.module.css';
 
-export class ContactItem extends Component {
-  render() {
-    const { contact, onDeleteClick } = this.props;
-
+export const ContactItem = ({contact, onDeleteClick }) => {
     return (
       <li className={css.item} key={contact.id}>
         <p className={css.text}>
@@ -17,7 +13,7 @@ export class ContactItem extends Component {
       </li>
     );
   }
-}
+
 
 ContactItem.propTypes = {
   contact: PropTypes.object.isRequired,

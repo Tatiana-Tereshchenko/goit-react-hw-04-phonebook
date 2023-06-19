@@ -1,12 +1,8 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types'; 
 import css from './Filter.module.css';
 
 
-export class Filter extends Component {
-  render() {
-    const { value, onChange } = this.props;
-
+export const Filter = ({value, onChange }) => {
     return (
       <label className={css.label}>
         Filter contacts by name:
@@ -14,7 +10,7 @@ export class Filter extends Component {
       </label>
     );
   }
-}
+
 
 Filter.propTypes = {
   value: PropTypes.string.isRequired,

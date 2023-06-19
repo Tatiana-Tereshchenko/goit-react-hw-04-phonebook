@@ -1,17 +1,14 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ContactItem } from '../ContactItem/ContactItem';
 import css from './ContactList.module.css';
 
-export class ContactList extends Component {
-  handleDeleteClick = (contactId) => {
-    this.props.onDeleteContact(contactId);
+export const ContactList = ({ contacts, filter, onDeleteContact }) => {
+  
+  const handleDeleteClick = (contactId) => {
+    onDeleteContact(contactId);
   };
 
-  render() {
-    const { contacts, filter } = this.props;
-
-    const filteredContacts = contacts.filter((contact) =>
+  const filteredContacts = contacts.filter((contact) =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
 
@@ -20,14 +17,14 @@ export class ContactList extends Component {
         {filteredContacts.map((contact) => (
           <ContactItem
             contact={contact}
-            onDeleteClick={this.handleDeleteClick}
+            onDeleteClick={handleDeleteClick}
             key={contact.id}
           />
         ))}
       </ul>
     );
   }
-}
+
 
 ContactList.propTypes = {
   contacts: PropTypes.array.isRequired,
