@@ -40,6 +40,7 @@ export const App = () => {
   const handleFilterChange = (event) => {
     setFilter(event.target.value );
   };
+  
   const handleDeleteContact = (contactId) => {
     setContacts((prevContacts) =>
       prevContacts.filter((contact) => contact.id !== contactId)
